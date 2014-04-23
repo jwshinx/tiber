@@ -1,1 +1,10 @@
 %h3 Home
+
+%div
+  = @resp.headers.inspect
+  %br
+  = @resp.code
+  %br
+  = @resp.message
+  %br
+  = @resp.body
