@@ -6,6 +6,7 @@
 
 /config/database.yml
 /config/secret.yml
+/config/aws.yml
 
 # Ignore bundler config.
 /.bundle

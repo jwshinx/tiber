@@ -1,0 +1,11 @@
+development:
+  AWS_ACCESS_KEY_ID: 'dfoo'
+  AWS_SECRET_ACCESS_KEY: 'dbar'
+
+test:
+  AWS_ACCESS_KEY_ID: 'tfoo'
+  AWS_SECRET_ACCESS_KEY: 'tbar'  
+
+production:
+  AWS_ACCESS_KEY_ID: 'pfoo'
+  AWS_SECRET_ACCESS_KEY: 'pbar'
