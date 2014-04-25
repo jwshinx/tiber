@@ -2,6 +2,7 @@ class WelcomeController < ActionController::Base
   require 'httparty'
 
   # siena
+  # lucca
   def index
     logger.debug('---> hely')
     mysqs = AWS::SQS.new({access_key_id:ENV['AWS_ACCESS_KEY_ID'], secret_access_key:ENV['AWS_SECRET_ACCESS_KEY']})
