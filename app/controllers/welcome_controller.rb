@@ -16,4 +16,5 @@ class WelcomeController < ActionController::Base
     logger.info("---> weather 4: #{@resp.headers.inspect}") 
     logger.info("---> weather 5: #{@resp.body.inspect}") 
   end
+  # aahhhh
 end
