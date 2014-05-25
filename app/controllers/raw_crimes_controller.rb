@@ -4,7 +4,7 @@ class RawCrimesController < ApplicationController
   # GET /raw_crimes
   # GET /raw_crimes.json
   def index
-    @raw_crimes = RawCrime.all
+    @raw_crimes = RawCrime.paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /raw_crimes/1

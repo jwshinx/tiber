@@ -1,5 +1,7 @@
 %h1 Raw Crimes
 
+= will_paginate @raw_crimes
+
 %table
   %tr
     %th Case number
@@ -15,8 +17,8 @@
     %th Url
     %th Processed
     %th
-    %th
-    %th
+    - #%th
+    - #%th
 
   - @raw_crimes.each do |raw_crime|
     %tr
@@ -33,9 +35,9 @@
       %td= raw_crime.url
       %td= raw_crime.processed
       %td= link_to 'Show', raw_crime
-      %td= link_to 'Edit', edit_raw_crime_path(raw_crime)
-      %td= link_to 'Destroy', raw_crime, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - # %td= link_to 'Edit', edit_raw_crime_path(raw_crime)
+      - # %td= link_to 'Destroy', raw_crime, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Raw crime', new_raw_crime_path
+= link_to 'New Raw Crime', new_raw_crime_path
