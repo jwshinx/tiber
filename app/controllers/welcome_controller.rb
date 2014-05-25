@@ -1,5 +1,6 @@
 class WelcomeController < ActionController::Base
   require 'httparty'
+  layout 'application'
 
   def index
     logger.debug('---> hely')
