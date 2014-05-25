@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b Case number:
+  = @raw_crime.case_number
+%p
+  %b Description:
+  = @raw_crime.description
+%p
+  %b Timestamp:
+  = @raw_crime.timestamp
+%p
+  %b Beat:
+  = @raw_crime.beat
+%p
+  %b Crime type:
+  = @raw_crime.crime_type
+%p
+  %b Zip:
+  = @raw_crime.zip
+%p
+  %b Address description:
+  = @raw_crime.address_description
+%p
+  %b Latitude:
+  = @raw_crime.latitude
+%p
+  %b Longitude:
+  = @raw_crime.longitude
+%p
+  %b Accuracy:
+  = @raw_crime.accuracy
+%p
+  %b Url:
+  = @raw_crime.url
+%p
+  %b Processed:
+  = @raw_crime.processed
+
+= link_to 'Edit', edit_raw_crime_path(@raw_crime)
+\|
+= link_to 'Back', raw_crimes_path

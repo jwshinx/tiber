@@ -1,0 +1,41 @@
+%h1 Listing raw_crimes
+
+%table
+  %tr
+    %th Case number
+    %th Description
+    %th Timestamp
+    %th Beat
+    %th Crime type
+    %th Zip
+    %th Address description
+    %th Latitude
+    %th Longitude
+    %th Accuracy
+    %th Url
+    %th Processed
+    %th
+    %th
+    %th
+
+  - @raw_crimes.each do |raw_crime|
+    %tr
+      %td= raw_crime.case_number
+      %td= raw_crime.description
+      %td= raw_crime.timestamp
+      %td= raw_crime.beat
+      %td= raw_crime.crime_type
+      %td= raw_crime.zip
+      %td= raw_crime.address_description
+      %td= raw_crime.latitude
+      %td= raw_crime.longitude
+      %td= raw_crime.accuracy
+      %td= raw_crime.url
+      %td= raw_crime.processed
+      %td= link_to 'Show', raw_crime
+      %td= link_to 'Edit', edit_raw_crime_path(raw_crime)
+      %td= link_to 'Destroy', raw_crime, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Raw crime', new_raw_crime_path
