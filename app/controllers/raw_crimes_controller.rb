@@ -4,11 +4,9 @@ class RawCrimesController < ApplicationController
   # GET /raw_crimes
   # GET /raw_crimes.json
   def index
-    Rails.logger.info '---> just hi'
     @raw_crimes = RawCrime.paginate(:page => params[:page], :per_page => 10)
     CrimeWorker.perform_async('yellow')
-    
-    Rails.logger.info '---> just bye'
+    CrimeWorker.perform_in(5.minutes.from_now, 'bones')
   end
 
   # GET /raw_crimes/1
