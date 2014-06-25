@@ -5,8 +5,8 @@ class RawCrimesController < ApplicationController
   # GET /raw_crimes.json
   def index
     @raw_crimes = RawCrime.paginate(:page => params[:page], :per_page => 10)
-    CrimeWorker.perform_async('yellow')
-    CrimeWorker.perform_in(5.minutes.from_now, 'bones')
+    CrimeWorker.perform_async('eink')
+    CrimeWorker.perform_in(2.minutes.from_now, 'eones')
   end
 
   # GET /raw_crimes/1
