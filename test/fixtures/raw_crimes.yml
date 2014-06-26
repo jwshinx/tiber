@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  case_number: MyString
+  description: MyString
+  timestamp: 2014-05-12 07:16:41
+  beat: MyString
+  crime_type: MyString
+  zip: MyString
+  address_description: MyString
+  latitude: 1.5
+  longitude: 1.5
+  accuracy: MyString
+  url: MyString
+  processed: false
+
+two:
+  case_number: MyString
+  description: MyString
+  timestamp: 2014-05-12 07:16:41
+  beat: MyString
+  crime_type: MyString
+  zip: MyString
+  address_description: MyString
+  latitude: 1.5
+  longitude: 1.5
+  accuracy: MyString
+  url: MyString
+  processed: false

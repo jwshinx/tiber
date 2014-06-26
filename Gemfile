@@ -16,7 +16,8 @@ gem 'therubyracer',  platforms: :ruby
 gem 'haml-rails'
 gem 'aws-sdk', '~> 1.0'
 gem 'httparty'
-
+gem 'will_paginate', '~> 3.0'
+gem 'sidekiq'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

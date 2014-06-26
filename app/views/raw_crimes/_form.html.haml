@@ -1,0 +1,46 @@
+= form_for @raw_crime do |f|
+  - if @raw_crime.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@raw_crime.errors.count, "error")} prohibited this raw_crime from being saved:"
+      %ul
+        - @raw_crime.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :case_number
+    = f.text_field :case_number
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :timestamp
+    = f.datetime_select :timestamp
+  .field
+    = f.label :beat
+    = f.text_field :beat
+  .field
+    = f.label :crime_type
+    = f.text_field :crime_type
+  .field
+    = f.label :zip
+    = f.text_field :zip
+  .field
+    = f.label :address_description
+    = f.text_field :address_description
+  .field
+    = f.label :latitude
+    = f.text_field :latitude
+  .field
+    = f.label :longitude
+    = f.text_field :longitude
+  .field
+    = f.label :accuracy
+    = f.text_field :accuracy
+  .field
+    = f.label :url
+    = f.text_field :url
+  .field
+    = f.label :processed
+    = f.check_box :processed
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,10 @@
+# start/stop sidekiq:
+# bundle exec sidekiq -d -e production -C config/sidekiq.yml
+# sidekiqctl stop /path/to/app/tmp/pids/sidekiq.pid
+#
+:verbose: false
+:pidfile: tmp/pids/sidekiq.pid
+development:
+  :logfile: log/sidekiq_development.log
+production:
+  :logfile: log/sidekiq_production.log

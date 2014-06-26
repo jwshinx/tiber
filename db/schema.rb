@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422035756) do
+ActiveRecord::Schema.define(version: 20140512071641) do
 
   create_table "people", force: true do |t|
     t.string   "firstname"
@@ -20,5 +20,24 @@ ActiveRecord::Schema.define(version: 20140422035756) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "raw_crimes", force: true do |t|
+    t.string   "case_number"
+    t.string   "description"
+    t.datetime "timestamp"
+    t.string   "beat"
+    t.string   "crime_type"
+    t.string   "zip"
+    t.string   "address_description"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "accuracy"
+    t.string   "url"
+    t.boolean  "processed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "raw_crimes", ["case_number"], name: "index_raw_crimes_on_case_number", using: :btree
 
 end
