@@ -1,10 +1,16 @@
 %br
 %br
 %div
-  = @resp.headers.inspect
+  - # = JSON.pretty_generate(@resp.headers.to_json)
+  - # = JSON.pretty_generate(j(@resp.headers.to_json.html_safe))
+  = JSON.pretty_generate(JSON.load(@resp.headers.to_json))
+
   %br
   = @resp.code
   %br
   = @resp.message
   %br
+  - # = raw(JSON.pretty_generate([2, 'eee', {"a" => 3.2222}, false, nil, 4..10]).gsub(" ", "<br />"))
+  - # = JSON.pretty_generate([2, 'eee', {"a" => 3.2222}, false, nil, 4..10])
+  
   = @resp.body
