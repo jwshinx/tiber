@@ -18,6 +18,7 @@ gem 'aws-sdk', '~> 1.0'
 gem 'httparty'
 gem 'will_paginate', '~> 3.0'
 gem 'sidekiq'
+gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
