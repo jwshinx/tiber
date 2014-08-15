@@ -11,7 +11,9 @@ module Api
       end
 
       def rig
-        respond_with Dot.find_all_by_rig_id(params[:rig_id]).to_a
+        # deprecated in rails 4: all
+        #respond_with Dot.find_all_by_rig_id(params[:rig_id]).to_a
+        respond_with Dot.where(:rig_id => params[:rig_id]).to_a
       end
 
       def create
