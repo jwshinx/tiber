@@ -1,4 +1,5 @@
 class WelcomeController < ActionController::Base
+  before_action :authenticate_user!
   require 'httparty'
   layout 'application'
 

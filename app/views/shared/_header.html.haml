@@ -1,3 +1,15 @@
+%p.notice= notice
+%p.alert= alert
+
+%div
+  - if user_signed_in?
+    %p 
+      Logged In
+      = link_to 'Log Off', destroy_user_session_path, :method => :delete
+  - else
+    %p Sign In?
+  %br
+
 %ul
   %li= link_to 'Home', root_path
   |
