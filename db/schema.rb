@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140814220906) do
+ActiveRecord::Schema.define(version: 20140815231552) do
+
+  create_table "dots", force: true do |t|
+    t.integer  "alt",                 default: 0,     null: false
+    t.boolean  "cached",              default: false
+    t.string   "collection_status"
+    t.string   "deviceUniqueId"
+    t.float    "distance"
+    t.boolean  "downtime_all_day"
+    t.string   "downtime_reason"
+    t.string   "driver_firstname"
+    t.string   "driver_lastname"
+    t.float    "lat"
+    t.float    "lon"
+    t.string   "obd2_ambient_temp"
+    t.string   "obd2_baro_pressure"
+    t.string   "obd2_coolant_temp"
+    t.string   "obd2_engine_runtime"
+    t.string   "obd2_rpm"
+    t.string   "obd2_velocity"
+    t.string   "rig_id"
+    t.integer  "timeZoneOffset"
+    t.datetime "timestamp",                           null: false
+    t.string   "version"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "people", force: true do |t|
     t.string   "firstname"
