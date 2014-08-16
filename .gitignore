@@ -7,6 +7,7 @@
 /config/database.yml
 /config/secrets.yml
 /config/aws.yml
+/config/initializers/devise.rb
 
 # Ignore bundler config.
 /.bundle
