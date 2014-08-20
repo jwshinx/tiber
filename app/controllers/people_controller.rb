@@ -5,6 +5,9 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
+    logger.debug("---> session user_id: #{session['user_id'].inspect}") # nil
+    logger.debug("---> current user: #{current_user.inspect}")          # yes!
+
     @people = Person.all
   end
 

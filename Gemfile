@@ -19,6 +19,7 @@ gem 'httparty'
 gem 'will_paginate', '~> 3.0'
 gem 'sidekiq'
 gem 'devise'
+gem 'doorkeeper'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
