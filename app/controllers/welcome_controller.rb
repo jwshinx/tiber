@@ -3,10 +3,6 @@ class WelcomeController < ActionController::Base
   require 'httparty'
   layout 'application'
 
-  # red
-  # blue
-  # siena
-  # lucca
   def index
     # smile
     # giggle 

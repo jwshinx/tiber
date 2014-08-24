@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   use_doorkeeper do
     controllers :applications => 'custom_applications'
+    #controllers :applications => :authorizations
   end
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
