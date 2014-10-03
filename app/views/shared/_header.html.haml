@@ -1,5 +1,7 @@
-%p.notice= notice
-%p.alert= alert
+- unless notice.blank?
+  %p.notice= notice
+- unless alert.blank?
+  %p.alert= alert
 
 %div
   - if user_signed_in?
