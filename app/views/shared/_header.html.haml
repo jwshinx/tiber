@@ -9,7 +9,7 @@
       Logged In
       = link_to 'Log Off', destroy_user_session_path, :method => :delete
   - else
-    %p Sign In?
+    %p= link_to  'Sign In?', new_user_session_path
   %br
 
 %ul
@@ -18,3 +18,5 @@
   %li= link_to 'People', people_path  
   |
   %li= link_to 'Raw Crimes', raw_crimes_path  
+  |
+  %li= link_to 'OAuth Clients', oauth_applications_path 

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :dots
       get 'rig_dots/:rig_id' => 'dots#rig'
+      get 'user' => 'users#show'
     end
   end
 
