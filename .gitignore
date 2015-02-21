@@ -11,6 +11,7 @@
 
 # Ignore bundler config.
 /.bundle
+/sandbox
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
