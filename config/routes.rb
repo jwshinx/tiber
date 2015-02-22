@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   resources :people
   resources :raw_crimes
 
+  get 'rome' => 'maps#rome', as: :rome
+  get 'coordinates' => 'maps#coordinates', as: :coordinates
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
