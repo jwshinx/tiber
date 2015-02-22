@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+require File.expand_path('../../../config/environment', __FILE__)
+
+LAT  = 37.804545784
+LONG = -122.223323
+
+# update date each raw_crime with realistic lat long.
+RawCrime.all.each do |c|
+  lat  = (LAT - (Random.rand(100) / 100000.0)).round(6)
+  long = (LONG - (Random.rand(100) / 100000.0)).round(6)
+  c.update({latitude: lat, longitude: long})
+end
+
+puts "---> env: #{Rails.env}"
+puts "---> done"
