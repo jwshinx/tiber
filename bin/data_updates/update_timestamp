@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+require File.expand_path('../../../config/environment', __FILE__)
+
+# update date each raw_crime with realistic lat long.
+# > bin/data_updates/update_timestamp
+# make sure to chmod 755 filename
+unless Rails.env == 'development'
+  puts '---> Development ONLY'
+  puts '---> exiting.'
+  exit
+end
+
+RawCrime.all.each do |c|
+  incre = Random.rand(10)
+  # puts incre
+  c.update({ timestamp: c.timestamp - incre.days })
+end
+puts "---> env: #{Rails.env}"
+puts "---> done"

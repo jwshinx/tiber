@@ -24,7 +24,7 @@
     %tr
       %td= raw_crime.case_number
       %td= raw_crime.description
-      %td= raw_crime.timestamp
+      %td= raw_crime.timestamp.strftime("%m/%d/%Y")
       %td= raw_crime.beat
       %td= raw_crime.crime_type
       %td= raw_crime.zip

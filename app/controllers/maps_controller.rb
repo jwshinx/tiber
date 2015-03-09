@@ -5,12 +5,13 @@ class MapsController < ApplicationController
   end
 
   def coordinates
+      #  { ts: '2222',
     @data = RawCrime
       .all
       .map do |c| 
-        { name: c.address_description, 
-          location: { latitude: c.latitude, 
-                      longitude: c.longitude }
+        { ts: c.timestamp.to_date.to_s,
+          latitude: c.latitude, 
+          longitude: c.longitude
         }
       end
     puts "---> c: #{@data.inspect}"
