@@ -4,4 +4,7 @@ class GraphsController < ApplicationController
   def wave
   end
 
+  def one
+  end
+
 end
