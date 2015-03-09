@@ -1,4 +1,8 @@
 $( document ).ready(function() {
+  if($("#map_area").length == 0) {
+    return false;
+  }
+  
   console.log( "---> maps" );
 
   var draw = function(res) {
