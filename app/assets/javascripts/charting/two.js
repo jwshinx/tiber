@@ -3,11 +3,14 @@ $( document ).ready(function() {
     return false;
   }
   
-  console.log( "---> two 5" );
+  console.log( "---> two 6" );
 
-  // Chart variables
   var data = ['aaa', 'bbb', 'ccc'];
-  var barcode = barcodeChart();
+  var barcode = barcodeChart()
+    .width(100)
+    .height(100);
+    // .margin({top: 5, right: 5, bottom: 5, left: 5});
+
   d3.select('#two_chart').selectAll('div.data-item')
     .data(data)
     .enter()
@@ -18,11 +21,6 @@ $( document ).ready(function() {
 /*
 var barcodeChart = function() {
     'use strict';
-
-    // Chart variables
-    var width = 600,
-        height = 30,
-        margin = {top: 5, right: 5, bottom: 5, left: 5};
 
     // Date accessor function
     var value = function(d) { return d.date; };
@@ -88,48 +86,6 @@ var barcodeChart = function() {
         });
     }
 
-    // SVG Initialization Method
-    chart.svgInit = function(svg) {
-
-        // Set the SVG size.
-        svg
-            .attr('width', width)
-            .attr('height', height);
-
-        // Append a container group and translate it to consider the margins.
-        var g = svg.append('g')
-            .attr('class', 'chart-content')
-            .attr('transform', 'translate(' + [margin.top, margin.left] + ')');
-
-        // Append a white background rectangle.
-        g.append('rect')
-            .attr('width', width - margin.left - margin.right)
-            .attr('height', height - margin.top - margin.bottom)
-            .attr('fill', 'white');
-    };
-
-    // Accessor Methods
-
-    // Width Accessor
-    chart.width = function(value) {
-        if (!arguments.length) { return width; }
-        width = value;
-        return chart;
-    };
-
-    // Height Accessor
-    chart.height = function(value) {
-        if (!arguments.length) { return height; }
-        height = value;
-        return chart;
-    };
-
-    // Margin Accessor
-    chart.margin = function(value) {
-        if (!arguments.length) { return margin; }
-        margin = value;
-        return chart;
-    };
 
     // Date Accessor
     chart.value = function(accessorFunction) {
