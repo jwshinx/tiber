@@ -6,34 +6,14 @@ $( document ).ready(function() {
   console.log( "---> two 5" );
 
   // Chart variables
-  var width = 600,
-      height = 30,
-      data = ['aaa', 'bbb', 'ccc'];
-  
+  var data = ['aaa', 'bbb', 'ccc'];
+  var barcode = barcodeChart();
   d3.select('#two_chart').selectAll('div.data-item')
     .data(data)
     .enter()
     .append('div')
     .attr('class', 'data-item')
-    .call(chart);
-
-  function chart(selection) {
-
-    selection.each(function(data) {
-      // Select the SVG elements and bind it to a single element dataset.
-      var div = d3.select(this).attr('class', 'data-item'),
-          svg = div.selectAll('svg').data([data])
-          svgEnter = svg.enter();
-
-      svgEnter.append('svg')
-        .attr('width', width)
-        .attr('height', height)
-        .append('rect')
-        .attr('width', width)
-        .attr('height', height)
-        .attr('fill', 'pink');
-    });
-  }
+    .call(barcode);
 
 /*
 var barcodeChart = function() {
