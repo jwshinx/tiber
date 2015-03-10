@@ -3,7 +3,7 @@ $( document ).ready(function() {
     return false;
   }
   
-  console.log( "---> chart 1" );
+  console.log( "---> one 1" );
   var data = ['a', 'b', 'c'];
 
   /*

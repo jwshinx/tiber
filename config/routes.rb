@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :raw_crimes
 
   get 'one' => 'graphs#one', as: :one
+  get 'two' => 'graphs#two', as: :two
+
   get 'wave' => 'graphs#wave', as: :wave
   get 'rome' => 'maps#rome', as: :rome
   get 'coordinates' => 'maps#coordinates', as: :coordinates
