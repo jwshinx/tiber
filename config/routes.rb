@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   use_doorkeeper do
     controllers :applications => 'custom_applications'
+    #controllers :applications => :authorizations
   end
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
       resources :dots
       get 'rig_dots/:rig_id' => 'dots#rig'
+      get 'user' => 'users#show'
     end
   end
 
