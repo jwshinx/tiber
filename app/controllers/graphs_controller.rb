@@ -13,4 +13,7 @@ class GraphsController < ApplicationController
   def twob
   end
 
+  def three
+  end
+
 end
