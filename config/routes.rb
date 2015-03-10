@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get 'one' => 'graphs#one', as: :one
   get 'two' => 'graphs#two', as: :two
+  get 'twob' => 'graphs#twob', as: :twob
 
   get 'wave' => 'graphs#wave', as: :wave
   get 'rome' => 'maps#rome', as: :rome

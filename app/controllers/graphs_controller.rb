@@ -10,4 +10,7 @@ class GraphsController < ApplicationController
   def two
   end
 
+  def twob
+  end
+
 end
