@@ -9,7 +9,25 @@ function initDiv(selection) {
   });
 }
 
+var randomInterval = function(avgSeconds) {
+  return Math.floor(-Math.log(Math.random()) * 1000 * avgSeconds);
+}
+
+var addData = function(data, numItems, avgSeconds) {
+  var n = data.length,
+      t = (n > 0) ? data[n - 1].date : new Date();
+
+  for( var k = 0; k < numItems - 1; k += 1 ) {
+    t = new Date(t.getTime() + randomInterval(avgSeconds));
+    data.push({date: t});
+  }
+
+  return data;
+}
+
 var barcodeChart = function() {
+  
+  // console.log(randomInterval(200));
 
   var width = 600,
       height = 50,
@@ -20,10 +38,30 @@ var barcodeChart = function() {
     selection.each(function(data) {
       var div = d3.select(this),
           svg = div.selectAll('svg').data([data])
-      
+
       svg.enter()
         .append('svg')
         .call(chart.svgInit);
+      
+      var xScale = d3.time.scale()
+        //.domain([timeInterval.offset(lastDate, -1), lastDate])
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([0, width - margin.left - margin.right]);
+
+      var g = svg.select('g.chart-content'),
+          lines = g.selectAll('line');
+
+      var bars = g.selectAll('line')
+        .data(data, function(d) { return d.date; });
+
+      bars.enter().append('line')
+        .attr('x1', function(d) { return xScale(d.date); })
+        .attr('x2', function(d) { return xScale(d.date); })
+        .attr('y1', 0)
+        .attr('y2', height - margin.top - margin.bottom)
+        .attr('stroke', '#000')
+        .attr('stroke-opacity', 0.5);
+
     });
   }
 
@@ -41,7 +79,7 @@ var barcodeChart = function() {
     g.append('rect')
       .attr('width', width - margin.left - margin.right)
       .attr('height', height - margin.top - margin.bottom)
-      .attr('fill', 'gray');
+      .attr('fill', '#d2d2d2');
   };
 
   // Width Accessor

@@ -3,12 +3,15 @@ $( document ).ready(function() {
     return false;
   }
   
-  console.log( "---> two 6" );
+  console.log( "---> two 7" );
 
-  var data = ['aaa', 'bbb', 'ccc'];
-  var barcode = barcodeChart()
-    .width(100)
-    .height(100);
+  var data = addData([], 5, 300);
+
+  // console.log( "---> data: ", data );
+
+  var barcode = barcodeChart();
+    //.width(600)
+    //.height(100);
     // .margin({top: 5, right: 5, bottom: 5, left: 5});
 
   d3.select('#two_chart').selectAll('div.data-item')
